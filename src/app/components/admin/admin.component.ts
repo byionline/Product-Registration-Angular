@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
   }
+  // Fetch all products via ProductService
   getProducts() {
     this.productService.getProducts().subscribe(
       (data) => {

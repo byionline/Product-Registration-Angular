@@ -15,8 +15,10 @@ export class ViewDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Get Id of the Product then pass that id to getProductDetails() function
     this.getProductDetails(this.route.snapshot.params.id);
   }
+  // Fetch product details via ProductService
   getProductDetails(id: number) {
     this.productService.getProduct(id).subscribe(
       (data) => {

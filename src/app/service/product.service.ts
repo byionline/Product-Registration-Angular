@@ -10,6 +10,7 @@ const httpOptions = {
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
+  // Get All Products
   getProducts() {
     return this.http.get('/server/api/v1/products');
   }
