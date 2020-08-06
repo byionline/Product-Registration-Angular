@@ -1,46 +1,95 @@
-<div class="container">
+<div class="container contact-form">
   <form [formGroup]="productform" (ngSubmit)="submitRegistration()" novalidate>
+    <h3>Product Registration System</h3>
     <div *ngIf="validMessage != ''">
-      <h3 class="has-info">{{validMessage}}</h3>
+      <h3 class="has-info">{{ validMessage }}</h3>
     </div>
-    <div class="form-group">
-      <label>Customer Name</label>
-      <input type="text" class="form-control" formControlName="customerName" required autofocus />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Customer Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="customerName"
+            required
+            autofocus
+          />
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="customerAddress"
+            required
+            autofocus
+          />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="customerEmail"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="customerPhone"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Product Name</label>
+          <select class="form-control" formControlName="itemName" required>
+            <option value="">Please select a Product</option>
+            <option *ngFor="let m of items" [value]="m"> {{ m }} </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Serial No.</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="serialNumber"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Purchase Price</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="purchasePrice"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Purchase Date</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="purchaseDate"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="submit"
+            name="btnSubmit"
+            class="btnContact"
+            value="Submit"
+          />
+        </div>
+      </div>
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
     </div>
-    <div class="form-group">
-      <label>Address</label>
-      <input type="text" class="form-control" formControlName="customerAddress" required autofocus />
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" class="form-control" formControlName="customerEmail" required />
-    </div>
-    <div class="form-group">
-      <label>Phone</label>
-      <input type="text" class="form-control" formControlName="customerPhone" required />
-    </div>
-    <div class="form-group">
-      <label>Product Name</label>
-      <select class="form-control" formControlName="itemName" required>
-        <option value="">Please select a Product</option>
-        <option *ngFor="let m of items" [value]="m">
-          {{m}}
-        </option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Serial No.</label>
-      <input type="text" class="form-control" formControlName="serialNumber" required />
-    </div>
-    <div class="form-group">
-      <label>Purchase Price</label>
-      <input type="text" class="form-control" formControlName="purchasePrice" required />
-    </div>
-    <div class="form-group">
-      <label>Purchase Date</label>
-      <input type="text" class="form-control" formControlName="purchaseDate" required />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
