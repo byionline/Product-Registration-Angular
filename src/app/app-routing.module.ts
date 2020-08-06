@@ -1,9 +1,15 @@
+import { HomeComponent } from './components/home/home.component';
 import { ViewDetailComponent } from './components/view-detail/view-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
+  // For product registration
+  {
+    path: '',
+    component: HomeComponent,
+  },
   // For product details
   {
     path: 'admin/view/:id',
