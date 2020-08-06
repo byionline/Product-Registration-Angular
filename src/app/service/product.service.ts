@@ -18,4 +18,9 @@ export class ProductService {
   getProduct(id: number) {
     return this.http.get('/server/api/v1/products/' + id);
   }
+  // Add Product
+  createProduct(product) {
+    const body = JSON.stringify(product);
+    return this.http.post('/server/api/v1/products', body, httpOptions);
+  }
 }
