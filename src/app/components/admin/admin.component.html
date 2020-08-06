@@ -9,8 +9,13 @@
         <tr *ngFor="let product of products">
             <td>{{product.customerName}}</td>
             <td>{{product.customerPhone}}</td>
-            <td>{{product.serialNumber}}</td>
+            <td>
+<a [routerLink]="['/admin/view', product.id]">{{product.serialNumber}}</a>
+
+              </td>
             <td class="text-right">{{product.itemName}}</td>
         </tr>
     </table>
 </div>
+
+

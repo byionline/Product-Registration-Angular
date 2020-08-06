@@ -13,4 +13,8 @@ export class ProductService {
   getProducts() {
     return this.http.get('/server/api/v1/products');
   }
+  // Get Product By Id i.e single product
+  getProduct(id: number) {
+    return this.http.get('/server/api/v1/products/' + id);
+  }
 }

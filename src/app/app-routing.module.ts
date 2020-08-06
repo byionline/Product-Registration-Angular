@@ -1,8 +1,13 @@
+import { ViewDetailComponent } from './components/view-detail/view-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
+  {
+    path: 'admin/view/:id',
+    component: ViewDetailComponent,
+  },
   {
     path: 'admin',
     component: AdminComponent,
