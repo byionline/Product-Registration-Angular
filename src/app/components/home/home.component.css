@@ -48,3 +48,6 @@
   border: none;
   cursor: pointer;
 }
+.asteriskField {
+  color: red;
+}

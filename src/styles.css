@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
-body{
-    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+body {
+  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
 }

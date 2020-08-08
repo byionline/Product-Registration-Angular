@@ -7,24 +7,51 @@
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label>Customer Name</label>
+          <label>Customer Name</label><span class="asteriskField">*</span>
           <input
             type="text"
             class="form-control"
             formControlName="customerName"
-            required
             autofocus
+            [ngClass]="{
+              'is-invalid': f.customerName.touched && f.customerName.errors
+            }"
           />
+          <div
+            *ngIf="f.customerName.touched && f.customerName.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.customerName.errors.required">Name is required</span>
+            <span *ngIf="f.customerName.errors.minlength"
+              >Name should be 3 character.</span
+            >
+            <span *ngIf="f.customerName.errors.pattern"
+              >Enter a Valid Name.</span
+            >
+          </div>
         </div>
         <div class="form-group">
-          <label>Address</label>
+          <label>Address</label><span class="asteriskField">*</span>
           <input
             type="text"
             class="form-control"
             formControlName="customerAddress"
-            required
-            autofocus
+            [ngClass]="{
+              'is-invalid':
+                f.customerAddress.touched && f.customerAddress.errors
+            }"
           />
+          <div
+            *ngIf="f.customerAddress.touched && f.customerAddress.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.customerAddress.errors.required"
+              >Address is required</span
+            >
+            <span *ngIf="f.customerAddress.errors.minlength"
+              >Enter proper address.</span
+            >
+          </div>
         </div>
         <div class="form-group">
           <label>Email</label>
@@ -32,53 +59,135 @@
             type="email"
             class="form-control"
             formControlName="customerEmail"
-            required
+            [ngClass]="{
+              'is-invalid': f.customerEmail.touched && f.customerEmail.errors
+            }"
           />
+          <div
+            *ngIf="f.customerEmail.touched && f.customerEmail.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.customerEmail.errors.email"
+              >Email must be a valid email address</span
+            >
+          </div>
         </div>
         <div class="form-group">
-          <label>Phone</label>
+          <label>Phone</label><span class="asteriskField">*</span>
           <input
             type="text"
             class="form-control"
             formControlName="customerPhone"
-            required
+            [ngClass]="{
+              'is-invalid': f.customerPhone.touched && f.customerPhone.errors
+            }"
           />
+          <div
+            *ngIf="f.customerPhone.touched && f.customerPhone.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.customerPhone.errors.required"
+              >Phone No. is required</span
+            >
+            <span *ngIf="f.customerPhone.errors.pattern"
+              >Not a Valid Phone No.</span
+            >
+            <span
+              *ngIf="
+                f.customerPhone.errors.minlength ||
+                f.customerPhone.errors.maxlength
+              "
+              >Phone number must be at least 10 digit.</span
+            >
+          </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Product Name</label>
-          <select class="form-control" formControlName="itemName" required>
+          <label>Product Name</label><span class="asteriskField">*</span>
+          <select
+            class="form-control"
+            formControlName="itemName"
+            [ngClass]="{
+              'is-invalid': f.itemName.touched && f.itemName.errors
+            }"
+          >
             <option value="">Please select a Product</option>
             <option *ngFor="let m of items" [value]="m"> {{ m }} </option>
           </select>
+          <div
+            *ngIf="f.itemName.touched && f.itemName.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.itemName.errors.required"
+              >Product Name is required</span
+            >
+          </div>
         </div>
         <div class="form-group">
-          <label>Serial No.</label>
+          <label>Serial No.</label><span class="asteriskField">*</span>
           <input
             type="text"
             class="form-control"
             formControlName="serialNumber"
-            required
+            [ngClass]="{
+              'is-invalid': f.serialNumber.touched && f.serialNumber.errors
+            }"
           />
+          <div
+            *ngIf="f.serialNumber.touched && f.serialNumber.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.serialNumber.errors.required"
+              >Serial No. is required</span
+            >
+            <span
+              *ngIf="
+                f.serialNumber.errors.minlength ||
+                f.serialNumber.errors.maxlength
+              "
+              >Enter 10 digit Serial No.</span
+            >
+          </div>
         </div>
         <div class="form-group">
-          <label>Purchase Price</label>
+          <label>Purchase Price</label><span class="asteriskField">*</span>
           <input
             type="text"
             class="form-control"
             formControlName="purchasePrice"
-            required
+            [ngClass]="{
+              'is-invalid': f.purchasePrice.touched && f.purchasePrice.errors
+            }"
           />
+          <div
+            *ngIf="f.purchasePrice.touched && f.purchasePrice.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.purchasePrice.errors.required"
+              >Price is required</span
+            >
+            <span *ngIf="f.purchasePrice.errors.pattern"
+              >Not a Valid Price</span
+            >
+          </div>
         </div>
         <div class="form-group">
-          <label>Purchase Date</label>
+          <label>Purchase Date</label><span class="asteriskField">*</span>
           <input
             type="text"
             class="form-control"
             formControlName="purchaseDate"
-            required
+            bsDatepicker
+            [bsConfig]="{ isAnimated: true }"
+            [ngClass]="{ 'is-invalid': submitted && f.purchaseDate.errors }"
           />
+          <div
+            *ngIf="submitted && f.purchaseDate.errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f.purchaseDate.errors.required">Date is required</span>
+          </div>
         </div>
         <div class="form-group">
           <input
