@@ -1,6 +1,14 @@
-# ProductRegistrationAngular
+# Product Registration Angular App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+
+## Watch the video of running application
+
+[![Product Registration](https://img.youtube.com/vi/lfGLBNpBX5o/0.jpg)](https://youtu.be/lfGLBNpBX5o "Product Registration")
+
+## Backend is developed using Spring Boot
+
+Link to code:- https://github.com/byionline/Product-Registration
 
 ## Development server
 
